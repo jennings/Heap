@@ -1,0 +1,13 @@
+# Visual Studio files
+
+*.user
+*.suo
+[Bb]in/
+[Oo]bj/
+[Aa]pp_[Dd]ata/
+
+
+# StyleCop files
+
+StyleCop.[Cc]ache
+*.chw

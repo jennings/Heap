@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heap.Web", "Heap.Web\Heap.Web.csproj", "{E0A8C49B-3DE6-429E-9F0C-AF1D929BAD55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heap.Models", "Heap.Models\Heap.Models.csproj", "{999AB033-3C93-4A3C-9259-752BA543148E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB34821C-5B56-4EB9-8E71-237E82714E2A}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Test|Any CPU = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0A8C49B-3DE6-429E-9F0C-AF1D929BAD55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A8C49B-3DE6-429E-9F0C-AF1D929BAD55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A8C49B-3DE6-429E-9F0C-AF1D929BAD55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A8C49B-3DE6-429E-9F0C-AF1D929BAD55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A8C49B-3DE6-429E-9F0C-AF1D929BAD55}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{E0A8C49B-3DE6-429E-9F0C-AF1D929BAD55}.Test|Any CPU.Build.0 = Test|Any CPU
+		{999AB033-3C93-4A3C-9259-752BA543148E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999AB033-3C93-4A3C-9259-752BA543148E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999AB033-3C93-4A3C-9259-752BA543148E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999AB033-3C93-4A3C-9259-752BA543148E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999AB033-3C93-4A3C-9259-752BA543148E}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{999AB033-3C93-4A3C-9259-752BA543148E}.Test|Any CPU.Build.0 = Test|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
