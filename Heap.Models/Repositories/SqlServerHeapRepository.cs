@@ -20,6 +20,16 @@ namespace Heap.Models.Repositories
             this.context = new HeapDbContext(connectionString);
         }
 
+        public Entities.Diagnosis GetDiagnosis(int id)
+        {
+            return this.context.Diagnoses.Find(id);
+        }
+
+        public IQueryable<Entities.Diagnosis> GetDiagnoses()
+        {
+            return this.context.Diagnoses;
+        }
+
         public void Save(Entities.Diagnosis diagnosis)
         {
             var original = this.context.Diagnoses.Find(diagnosis.Id);

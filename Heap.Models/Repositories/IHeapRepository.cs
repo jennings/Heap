@@ -14,12 +14,16 @@ namespace Heap.Models.Repositories
 
     public interface IHeapRepository
     {
+        Diagnosis GetDiagnosis(int id);
+
+        IQueryable<Diagnosis> GetDiagnoses();
+
         void Save(Diagnosis diagnosis);
-        
+
         void Save(Symptom symptom);
-        
+
         void Save(Question question);
-        
+
         void Save(Article article);
     }
 }

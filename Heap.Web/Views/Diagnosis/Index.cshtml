@@ -1,0 +1,13 @@
+﻿@model Heap.Web.ViewModels.Diagnosis.IndexDiagnosisViewModel
+@{
+    ViewBag.Title = "Index";
+}
+<h2>
+    Index</h2>
+<p>@Html.ActionLink("Create", "Create")</p>
+<ul>
+    @foreach (var diagnosis in Model.Diagnoses)
+    {
+        <li>@Html.ActionLink(diagnosis.Query, "Details", new { id = diagnosis.Id })</li>
+    }
+</ul>

@@ -12,6 +12,7 @@ namespace Heap.Web
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using Castle.Windsor;
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -21,6 +22,8 @@ namespace Heap.Web
     /// </summary>
     public class MvcApplication : System.Web.HttpApplication
     {
+        internal static WindsorContainer Container { get; private set; }
+
         /// <summary>
         /// Registers global filters.
         /// </summary>
@@ -37,11 +40,18 @@ namespace Heap.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("favicon.ico");
 
             routes.MapRoute(
-                "Default",
-                "{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+                "Default-Entity",
+                "{controller}/{id}/{action}",
+                new { action = "Details" },
+                new { id = @"\d+" });
+
+            routes.MapRoute(
+                "Default-Generic",
+                "{controller}/{action}",
+                new { controller = "Diagnosis", action = "Index" });
         }
 
         /// <summary>
@@ -51,8 +61,23 @@ namespace Heap.Web
         {
             AreaRegistration.RegisterAllAreas();
 
+            this.ConfigureDependencyInjection();
+
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            ControllerBuilder.Current.SetControllerFactory(typeof(WindsorControllerFactory));
+        }
+
+        protected void Application_End()
+        {
+            MvcApplication.Container.Dispose();
+        }
+
+        private void ConfigureDependencyInjection()
+        {
+            MvcApplication.Container = new WindsorContainer();
+            MvcApplication.Container.Install(Castle.Windsor.Installer.FromAssembly.This());
         }
     }
 }

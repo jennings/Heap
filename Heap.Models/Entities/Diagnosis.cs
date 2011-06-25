@@ -22,5 +22,9 @@ namespace Heap.Models.Entities
         public virtual Article SuccessfulArticle { get; set; }
 
         public virtual ICollection<Article> UnsuccessfulArticles { get; set; }
+
+        public virtual DateTime CreatedDate { get; set; }
+
+        public virtual DateTime? ModifiedDate { get; set; }
     }
 }
