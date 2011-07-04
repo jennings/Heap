@@ -8,6 +8,7 @@ namespace Heap.Models.Entities
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Text;
 
@@ -15,6 +16,7 @@ namespace Heap.Models.Entities
     {
         public virtual int Id { get; set; }
 
+        [MinLength(1)]
         public virtual string Query { get; set; }
 
         public virtual ICollection<Symptom> SelectedSymptoms { get; set; }

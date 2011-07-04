@@ -1,9 +1,82 @@
+/* SCHEME:
+ *  Light highlight:  #009acd
+ *  Dark highlight:   #006080
+ *  Light accent:     #cc7700
+ *  Dark accent:      #803500
+ *  Light background: #cccccc
+ *  Dark background:  #333333
+ */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
 body
 {
-    font-size: 75%;
+    font-size: 12pt;
     font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
-    color: #232323;
+    color: #000000;
+    background-color: #006080;
+}
+
+a:link, a:visited
+{
+    color: #803500;
+}
+
+a:hover, a:active
+{
+    color: #CC7700;
+}
+
+nav
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2em;
+    padding: .5em 2em 0em;
     background-color: #fff;
+    color: #000;
+    border-bottom: solid 2px #333;
+    font-weight: bold;
+}
+
+#main-content
+{
+    margin: 4em 2em 2em 2em;
+    padding: 1em 2em;
+    background-color: #fff;
+    color: #000;
+    border: solid 2px #333;
+}
+
+h1
+{
+    font-size: 150%;
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4
+{
+    color: #333;
+}
+
+#main-content .full-width-container
+{
+    width: 95%;
+    margin: 1em 5%;
+}
+
+#main-content .left-half-width-container
+{
+}
+
+#main-content .right-half-width-container
+{
 }
 
 /* Styles for basic forms

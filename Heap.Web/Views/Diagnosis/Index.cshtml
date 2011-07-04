@@ -8,6 +8,6 @@
 <ul>
     @foreach (var diagnosis in Model.Diagnoses)
     {
-        <li>@Html.ActionLink(diagnosis.Query, "Details", new { id = diagnosis.Id })</li>
+        <li>@Html.ActionLink(diagnosis.Query ?? "NULL", "Details", new { id = diagnosis.Id })</li>
     }
 </ul>
