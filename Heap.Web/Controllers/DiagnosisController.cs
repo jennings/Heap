@@ -14,10 +14,12 @@ namespace Heap.Web.Controllers
     using Heap.Models.Entities;
     using Heap.Models.Repositories;
     using Heap.Web.ViewModels.Diagnosis;
+    using MvcMiniProfiler;
 
     public class DiagnosisController : Controller
     {
         private IHeapRepository repository;
+        private MiniProfiler profiler = MiniProfiler.Current;
 
         public DiagnosisController(IHeapRepository repository)
         {
