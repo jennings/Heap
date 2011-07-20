@@ -89,6 +89,9 @@ namespace Heap.Web
         {
             MvcApplication.Container = new WindsorContainer();
             MvcApplication.Container.Install(Castle.Windsor.Installer.FromAssembly.This());
+
+            var factory = MvcApplication.Container.Resolve<System.Data.Entity.Infrastructure.IDbConnectionFactory>();
+            System.Data.Entity.Database.DefaultConnectionFactory = new MvcMiniProfiler.Data.ProfiledDbConnectionFactory(factory);
         }
     }
 }
