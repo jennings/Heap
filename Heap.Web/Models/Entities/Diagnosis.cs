@@ -4,7 +4,7 @@
 // </copyright>
 //------------------------------------------------------------------------------------
 
-namespace Heap.Models.Entities
+namespace Heap.Web.Models.Entities
 {
     using System;
     using System.Collections.Generic;

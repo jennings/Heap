@@ -4,7 +4,7 @@
 // </copyright>
 //------------------------------------------------------------------------------------
 
-namespace Heap.Models.Repositories
+namespace Heap.Web.Models.Repositories
 {
     using System;
     using System.Collections.Generic;

@@ -13,6 +13,6 @@ namespace Heap.Web.ViewModels.Diagnosis
 
     public class IndexDiagnosisViewModel
     {
-        public IEnumerable<Heap.Models.Entities.Diagnosis> Diagnoses { get; set; }
+        public IEnumerable<Heap.Web.Models.Entities.Diagnosis> Diagnoses { get; set; }
     }
 }

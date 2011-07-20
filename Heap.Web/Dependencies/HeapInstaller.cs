@@ -13,7 +13,7 @@ namespace Heap.Web.Dependencies
     using System.Web.Mvc;
     using Castle.MicroKernel.Registration;
     using Castle.Windsor;
-    using Heap.Models.Repositories;
+    using Heap.Web.Models.Repositories;
 
     public class HeapInstaller : IWindsorInstaller
     {
@@ -21,12 +21,13 @@ namespace Heap.Web.Dependencies
         {
             var connectionStringParameter = Parameter.ForKey("connectionString").Eq(System.Configuration.ConfigurationManager.ConnectionStrings["HeapEntities"].ConnectionString);
 
-            container.Register(AllTypes.FromAssemblyContaining<IHeapRepository>()
+            container.Register(AllTypes.FromThisAssembly()
                                        .BasedOn<IHeapRepository>().WithService.Base()
                                        .Configure(component => component.Parameters(connectionStringParameter)
                                                                         .LifeStyle.PerWebRequest));
 
-            container.Register(AllTypes.FromThisAssembly().BasedOn<IController>()
+            container.Register(AllTypes.FromThisAssembly()
+                                       .BasedOn<IController>()
                                        .Configure(component => component.LifeStyle.PerWebRequest));
         }
     }

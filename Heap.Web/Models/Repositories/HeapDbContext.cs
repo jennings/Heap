@@ -4,14 +4,14 @@
 // </copyright>
 //------------------------------------------------------------------------------------
 
-namespace Heap.Models.Repositories
+namespace Heap.Web.Models.Repositories
 {
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
     using System.Text;
-    using Heap.Models.Entities;
+    using Heap.Web.Models.Entities;
 
     internal class HeapDbContext : DbContext
     {

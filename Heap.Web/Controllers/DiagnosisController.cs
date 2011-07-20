@@ -11,8 +11,8 @@ namespace Heap.Web.Controllers
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
-    using Heap.Models.Entities;
-    using Heap.Models.Repositories;
+    using Heap.Web.Models.Entities;
+    using Heap.Web.Models.Repositories;
     using Heap.Web.ViewModels.Diagnosis;
     using MvcMiniProfiler;
 
