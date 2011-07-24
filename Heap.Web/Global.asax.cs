@@ -67,7 +67,7 @@ namespace Heap.Web
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            ControllerBuilder.Current.SetControllerFactory(typeof(WindsorControllerFactory));
+            ControllerBuilder.Current.SetControllerFactory(typeof(Controllers.WindsorControllerFactory));
         }
 
         protected void Application_End()

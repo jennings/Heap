@@ -4,7 +4,7 @@
 // </copyright>
 //------------------------------------------------------------------------------------
 
-namespace Heap.Web
+namespace Heap.Web.Controllers
 {
     using System;
     using System.Collections.Generic;
