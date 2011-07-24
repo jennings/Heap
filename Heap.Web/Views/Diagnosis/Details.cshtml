@@ -1,0 +1,46 @@
+﻿@model Heap.Web.ViewModels.Diagnosis.DetailsDiagnosisViewModel
+@{
+    ViewBag.Title = Model.Diagnosis.Query + "Details";
+}
+<h2>
+    @Model.Diagnosis.Query</h2>
+<h3>
+    Created Date
+</h3>
+<p>@Model.Diagnosis.CreatedDate</p>
+<h3>
+    Modified Date
+</h3>
+<p>@Model.Diagnosis.ModifiedDate</p>
+<h3>
+    Successful Article
+</h3>
+<p>
+    @{
+        var successfulArticle = Model.Diagnosis.SuccessfulArticle;
+        if (successfulArticle != null)
+        {
+        <text>@Html.ActionLink(successfulArticle.Id.ToString(), "Details", "Article", new { id = successfulArticle.Id }, null)</text>
+        }
+    }
+</p>
+<h3>
+    Selected Symptoms</h3>
+<ul>
+    @foreach (var symptom in Model.Diagnosis.SelectedSymptoms)
+    {
+        <li>
+            @Html.ActionLink(symptom.Name, "Details", "Symptom", new { id = symptom.Id }, null)
+        </li>
+    }
+</ul>
+<h3>
+    Unsuccessful Articles</h3>
+<ul>
+    @foreach (var article in Model.Diagnosis.UnsuccessfulArticles)
+    {
+        <li>
+            @Html.ActionLink(article.Id.ToString(), "Details", "Article", new { id = article.Id }, null)
+        </li>
+    }
+</ul>

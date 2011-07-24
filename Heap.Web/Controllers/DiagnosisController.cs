@@ -38,9 +38,12 @@ namespace Heap.Web.Controllers
 
         public ActionResult Details(int id)
         {
-            var diagnosis = this.repository.GetDiagnosis(id);
+            var model = new DetailsDiagnosisViewModel()
+            {
+                Diagnosis = this.repository.GetDiagnosis(id)
+            };
 
-            return View(diagnosis);
+            return View(model);
         }
 
         public ActionResult Create()
