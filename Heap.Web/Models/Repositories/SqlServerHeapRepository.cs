@@ -32,7 +32,7 @@ namespace Heap.Web.Models.Repositories
             return this.context.Diagnoses;
         }
 
-        public void Save(Entities.Diagnosis diagnosis)
+        public void InsertOrUpdate(Entities.Diagnosis diagnosis)
         {
             var original = this.context.Diagnoses.Find(diagnosis.Id);
 
@@ -46,11 +46,9 @@ namespace Heap.Web.Models.Repositories
                 entry.OriginalValues.SetValues(original);
                 entry.CurrentValues.SetValues(diagnosis);
             }
-
-            this.context.SaveChanges();
         }
 
-        public void Save(Entities.Symptom symptom)
+        public void InsertOrUpdate(Entities.Symptom symptom)
         {
             var original = this.context.Diagnoses.Find(symptom.Id);
 
@@ -64,11 +62,9 @@ namespace Heap.Web.Models.Repositories
                 entry.OriginalValues.SetValues(original);
                 entry.CurrentValues.SetValues(symptom);
             }
-
-            this.context.SaveChanges();
         }
 
-        public void Save(Entities.Question question)
+        public void InsertOrUpdate(Entities.Question question)
         {
             var original = this.context.Diagnoses.Find(question.Id);
 
@@ -82,11 +78,9 @@ namespace Heap.Web.Models.Repositories
                 entry.OriginalValues.SetValues(original);
                 entry.CurrentValues.SetValues(question);
             }
-
-            this.context.SaveChanges();
         }
 
-        public void Save(Entities.Article article)
+        public void InsertOrUpdate(Entities.Article article)
         {
             var original = this.context.Diagnoses.Find(article.Id);
 
@@ -100,7 +94,10 @@ namespace Heap.Web.Models.Repositories
                 entry.OriginalValues.SetValues(original);
                 entry.CurrentValues.SetValues(article);
             }
+        }
 
+        public void Save()
+        {
             this.context.SaveChanges();
         }
     }

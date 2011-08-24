@@ -1,0 +1,31 @@
+﻿@model Heap.Web.Models.Entities.Diagnosis
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>
+    Edit</h2>
+<script>
+    $(function () {
+        $('input[type="submit"]').button();
+    });
+</script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Diagnosis</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Query)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Query)
+            @Html.ValidationMessageFor(model => model.Query)
+        </div>
+        <p>
+            <input type="submit" value="Edit" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

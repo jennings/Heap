@@ -59,12 +59,38 @@ namespace Heap.Web.Controllers
             if (TryUpdateModel(diagnosis, new string[] { "Query" }))
             {
                 diagnosis.CreatedDate = DateTime.Now;
-                this.repository.Save(diagnosis);
+                this.repository.InsertOrUpdate(diagnosis);
+                this.repository.Save();
                 return RedirectToAction("Details", new { id = diagnosis.Id });
             }
             else
             {
                 return View();
+            }
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var model = this.repository.GetDiagnosis(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            var diagnosis = this.repository.GetDiagnosis(id);
+
+            if (TryUpdateModel(diagnosis, new string[] { "Query" }))
+            {
+                diagnosis.ModifiedDate = DateTime.Now;
+                this.repository.InsertOrUpdate(diagnosis);
+                this.repository.Save();
+                return RedirectToAction("Details");
+            }
+            else
+            {
+                return Edit(id);
             }
         }
     }

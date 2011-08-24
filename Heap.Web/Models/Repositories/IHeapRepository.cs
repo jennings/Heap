@@ -18,12 +18,14 @@ namespace Heap.Web.Models.Repositories
 
         IQueryable<Diagnosis> GetDiagnoses();
 
-        void Save(Diagnosis diagnosis);
+        void InsertOrUpdate(Diagnosis diagnosis);
 
-        void Save(Symptom symptom);
+        void InsertOrUpdate(Symptom symptom);
 
-        void Save(Question question);
+        void InsertOrUpdate(Question question);
 
-        void Save(Article article);
+        void InsertOrUpdate(Article article);
+
+        void Save();
     }
 }
