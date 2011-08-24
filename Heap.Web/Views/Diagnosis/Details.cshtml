@@ -1,6 +1,6 @@
 ﻿@model Heap.Web.ViewModels.Diagnosis.DetailsDiagnosisViewModel
 @{
-    ViewBag.Title = Model.Diagnosis.Query + "Details";
+    ViewBag.Title = Model.Diagnosis.Query + " (" + Model.Diagnosis.Id.ToString() + ")";
 }
 <h2>
     @Model.Diagnosis.Query</h2>
@@ -30,7 +30,7 @@
     @foreach (var symptom in Model.Diagnosis.SelectedSymptoms)
     {
         <li>
-            @Html.ActionLink(symptom.Name, "Details", "Symptom", new { id = symptom.Id }, null)
+            @symptom.Question.Description : @symptom.Name
         </li>
     }
 </ul>

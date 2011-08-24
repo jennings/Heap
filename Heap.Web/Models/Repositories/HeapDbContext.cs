@@ -18,6 +18,7 @@ namespace Heap.Web.Models.Repositories
         public HeapDbContext(string connectionString)
             : base(connectionString)
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<HeapDbContext>());
         }
 
         public IDbSet<Diagnosis> Diagnoses { get; set; }
