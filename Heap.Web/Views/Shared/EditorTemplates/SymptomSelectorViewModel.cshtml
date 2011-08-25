@@ -1,0 +1,33 @@
+﻿@model Heap.Web.ViewModels.Shared.EditorTemplates.SymptomSelectorViewModel
+<div class="symptomeditor">
+    <ul>
+        @if (Model.SelectedSymptoms != null)
+        {
+            foreach (var selectedSymptom in Model.SelectedSymptoms)
+            {
+            <li>
+                @selectedSymptom.Question.Description
+                @Html.DropDownList(
+                    "Question" + selectedSymptom.Question.Id,
+                    new SelectList(selectedSymptom.Question.Symptoms, "Id", "Name", selectedSymptom),
+                    "",
+                    null)
+            </li>
+            }
+        }
+        @if (Model.SuggestedQuestions != null)
+        {
+            foreach (var question in Model.SuggestedQuestions)
+            {
+            <li>
+                @question.Description
+                @Html.DropDownList(
+                    "Question" + question.Id,
+                    new SelectList(question.Symptoms, "Id", "Name", ""),
+                    "",
+                    null)
+            </li>
+            }
+        }
+    </ul>
+</div>

@@ -18,6 +18,8 @@ namespace Heap.Web.Models.Repositories
 
         IQueryable<Diagnosis> GetDiagnoses();
 
+        IQueryable<Question> GetQuestions();
+
         void InsertOrUpdate(Diagnosis diagnosis);
 
         void InsertOrUpdate(Symptom symptom);

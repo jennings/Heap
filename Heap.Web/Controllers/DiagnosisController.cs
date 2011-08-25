@@ -71,7 +71,19 @@ namespace Heap.Web.Controllers
 
         public ActionResult Edit(int id)
         {
-            var model = this.repository.GetDiagnosis(id);
+            var diagnosis = this.repository.GetDiagnosis(id);
+
+            var model = new EditDiagnosisViewModel
+            {
+                Id = diagnosis.Id,
+                CreatedDate = diagnosis.CreatedDate,
+                ModifiedDate = diagnosis.ModifiedDate,
+                Query = diagnosis.Query,
+                SuccessfulArticle = diagnosis.SuccessfulArticle,
+                UnsuccessfulArticles = diagnosis.UnsuccessfulArticles,
+                SelectedSymptoms = diagnosis.SelectedSymptoms,
+                SuggestedQuestions = this.repository.GetQuestions()
+            };
 
             return View(model);
         }

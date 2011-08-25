@@ -1,4 +1,4 @@
-﻿@model Heap.Web.Models.Entities.Diagnosis
+﻿@model Heap.Web.ViewModels.Diagnosis.EditDiagnosisViewModel
 @{
     ViewBag.Title = "Edit";
 }
@@ -20,6 +20,19 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Query)
             @Html.ValidationMessageFor(model => model.Query)
+        </div>
+        @{
+    var symptomModel = new Heap.Web.ViewModels.Shared.EditorTemplates.SymptomSelectorViewModel
+    {
+        SelectedSymptoms = Model.SelectedSymptoms,
+        SuggestedQuestions = Model.SuggestedQuestions
+    };
+        }
+        <div class="editor-label">
+            Symptoms
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => symptomModel)
         </div>
         <p>
             <input type="submit" value="Edit" />

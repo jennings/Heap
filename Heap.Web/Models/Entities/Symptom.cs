@@ -20,5 +20,7 @@ namespace Heap.Web.Models.Entities
         public virtual Question Question { get; set; }
 
         public virtual ICollection<Article> AssociatedArticles { get; set; }
+
+        public virtual ICollection<Diagnosis> AssociatedDiagnoses { get; set; }
     }
 }

@@ -32,6 +32,11 @@ namespace Heap.Web.Models.Repositories
             return this.context.Diagnoses;
         }
 
+        public IQueryable<Entities.Question> GetQuestions()
+        {
+            return this.context.Questions;
+        }
+
         public void InsertOrUpdate(Entities.Diagnosis diagnosis)
         {
             var original = this.context.Diagnoses.Find(diagnosis.Id);
