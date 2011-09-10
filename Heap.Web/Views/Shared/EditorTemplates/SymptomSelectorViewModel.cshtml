@@ -1,11 +1,12 @@
 ﻿@model Heap.Web.ViewModels.Shared.EditorTemplates.SymptomSelectorViewModel
 <div class="symptomeditor">
     <ul>
+        @{ bool oddRow = true; }
         @if (Model.SelectedSymptoms != null)
         {
             foreach (var selectedSymptom in Model.SelectedSymptoms)
             {
-            <li>
+            <li class="@(oddRow ? "odd" : "even")">
                 @selectedSymptom.Question.Description
                 @Html.DropDownList(
                     "Question" + selectedSymptom.Question.Id,
@@ -13,13 +14,14 @@
                     "",
                     null)
             </li>
+                oddRow = !oddRow;
             }
         }
         @if (Model.SuggestedQuestions != null)
         {
             foreach (var question in Model.SuggestedQuestions)
             {
-            <li>
+            <li class="@(oddRow ? "odd" : "even")">
                 @question.Description
                 @Html.DropDownList(
                     "Question" + question.Id,
@@ -27,6 +29,7 @@
                     "",
                     null)
             </li>
+                oddRow = !oddRow;
             }
         }
     </ul>

@@ -16,7 +16,7 @@
 body
 {
     font-size: 12pt;
-    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue" , Helvetica, Sans-Serif;
     color: #000000;
     background-color: #006080;
 }
@@ -82,32 +82,32 @@ h1, h2, h3, h4
 /* Styles for basic forms
 -----------------------------------------------------------*/
 
-fieldset 
+fieldset
 {
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
 }
 
-legend 
+legend
 {
-    font-size:1.2em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-textarea 
+textarea
 {
     min-height: 75px;
 }
 
-.editor-label 
+.editor-label
 {
     margin: 1em 0 0 0;
 }
 
-.editor-field 
+.editor-field
 {
-    margin:0.5em 0 0 0;
+    margin: 0.5em 0 0 0;
 }
 
 
@@ -138,4 +138,29 @@ textarea
 .validation-summary-valid
 {
     display: none;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.symptomeditor
+{
+    overflow: auto;
+    height: 10em;
+    border: solid 1px black;
+}
+.symptomeditor li
+{
+    padding: 0.3em;
+}
+.symptomeditor li.odd
+{
+}
+.symptomeditor li.even
+{
+    background-color: #eee;
+}
+.symptomeditor li select
+{
+    float: right;
 }
