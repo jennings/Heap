@@ -57,12 +57,18 @@ nav
 h1
 {
     font-size: 150%;
-    margin-bottom: 1em;
 }
 
-h1, h2, h3, h4
+h1, h2, h3
 {
     color: #333;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+h1:first-child, h2:first-child, h3:first-child
+{
+    margin-top: 0;
 }
 
 #main-content .full-width-container
@@ -77,6 +83,16 @@ h1, h2, h3, h4
 
 #main-content .right-half-width-container
 {
+}
+
+ul, ol
+{
+    list-style-position: inside;
+}
+
+p
+{
+    margin-bottom: 1em;
 }
 
 /* Styles for basic forms
@@ -141,7 +157,7 @@ textarea
 }
 
 
-/* Styles for validation helpers
+/* Styles for symptom editor
 -----------------------------------------------------------*/
 .symptomeditor
 {
