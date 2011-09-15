@@ -60,7 +60,7 @@ namespace Heap.Web.Models.Repositories
 
         public void InsertOrUpdate(Entities.Symptom symptom)
         {
-            var original = this.context.Diagnoses.Find(symptom.Id);
+            var original = this.context.Symptoms.Find(symptom.Id);
 
             if (original == null)
             {
@@ -76,7 +76,7 @@ namespace Heap.Web.Models.Repositories
 
         public void InsertOrUpdate(Entities.Question question)
         {
-            var original = this.context.Diagnoses.Find(question.Id);
+            var original = this.context.Questions.Find(question.Id);
 
             if (original == null)
             {
@@ -92,7 +92,7 @@ namespace Heap.Web.Models.Repositories
 
         public void InsertOrUpdate(Entities.Article article)
         {
-            var original = this.context.Diagnoses.Find(article.Id);
+            var original = this.context.Articles.Find(article.Id);
 
             if (original == null)
             {

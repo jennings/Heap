@@ -99,6 +99,7 @@
     <Compile Include="ViewModels\Diagnosis\EditDiagnosisViewModel.cs" />
     <Compile Include="ViewModels\Diagnosis\DetailsDiagnosisViewModel.cs" />
     <Compile Include="ViewModels\Question\DetailsQuestionViewModel.cs" />
+    <Compile Include="ViewModels\Question\EditQuestionViewModel.cs" />
     <Compile Include="ViewModels\Question\IndexQuestionViewModel.cs" />
     <Compile Include="ViewModels\Shared\EditorTemplates\SymptomSelectorViewModel.cs" />
     <Compile Include="ViewModels\Diagnosis\IndexDiagnosisViewModel.cs" />
@@ -231,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Question\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Question\Edit.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildProjectDirectory)\..\packages\StyleCop\Microsoft.StyleCop.Targets" />

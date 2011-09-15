@@ -60,5 +60,36 @@ namespace Heap.Web.Controllers
                 return View();
             }
         }
+
+        public ActionResult Edit(int id)
+        {
+            var question = this.repository.GetQuestion(id);
+
+            var model = new EditQuestionViewModel
+            {
+                Id = question.Id,
+                Description = question.Description,
+                Symptoms = question.Symptoms
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            var question = this.repository.GetQuestion(id);
+
+            if (TryUpdateModel(question, new string[] { "Description" }))
+            {
+                this.repository.InsertOrUpdate(question);
+                this.repository.Save();
+                return RedirectToAction("Details");
+            }
+            else
+            {
+                return Edit(id);
+            }
+        }
     }
 }
