@@ -1,0 +1,13 @@
+﻿@model Heap.Web.ViewModels.Question.IndexQuestionViewModel
+@{
+    ViewBag.Title = "Questions";
+}
+<h2>
+    Questions</h2>
+<p>@Html.ActionLink("Create New", "Create")</p>
+<ul>
+    @foreach (var question in Model.Questions)
+    {
+        <li>@Html.ActionLink(question.Description, "Details", new { id = question.Id })</li>
+    }
+</ul>
