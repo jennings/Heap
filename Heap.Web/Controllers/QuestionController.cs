@@ -91,5 +91,23 @@ namespace Heap.Web.Controllers
                 return Edit(id);
             }
         }
+
+        [HttpPost]
+        public ActionResult CreateSymptom(int id, FormCollection collection)
+        {
+            var symptom = new Symptom();
+
+            if (TryUpdateModel(symptom, new string[] { "Name" }))
+            {
+                symptom.Question = this.repository.GetQuestion(id);
+                this.repository.InsertOrUpdate(symptom);
+                this.repository.Save();
+                return RedirectToAction("Details", new { id = symptom.Question.Id });
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

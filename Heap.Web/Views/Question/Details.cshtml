@@ -6,4 +6,16 @@
     @Model.Question.Description</h2>
 <h3>
     Symptoms</h3>
+<ul>
+    @foreach (var symptom in Model.Question.Symptoms)
+    {
+        <li>@symptom.Name</li>
+    }
+    @using (Html.BeginForm("CreateSymptom", "Question"))
+    {
+        <li>@Html.TextBox("Name")
+            <input type="submit" value="Add Symptom" />
+        </li>        
+    }
+</ul>
 <p>@Html.ActionLink("Edit", "Edit")</p>
