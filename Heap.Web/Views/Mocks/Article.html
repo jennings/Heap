@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .flowchart-step {
+            border: solid 1px #000;
+            margin: 1em;
+        }
+
+        .flowchart-step-body {
+            border: solid 1px #f00;
+        }
+
+        .flowchart-step-sidebar {
+            border: solid 1px #0f0;
+            float: left;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+        }
+
+        .flowchart-step-instructions {
+            margin: 0 1em; 0 130px;
+            min-height: 120px;
+        }
+
+        .flowchart-step-footer {
+            border: solid 1px #00f;
+        }
+
+        .flowchart-step-footer ul {
+            list-style: none;
+            padding: 0 0.5em;
+        }
+
+        .flowchart-step-footer ul li {
+            display: inline-block;
+            border: solid 1px #f0f;
+            padding: 0.2em;
+        }
+
+        #def {
+            display: none;
+        }
+
+        #ghi {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="abc" class="flowchart-step">
+        <div class="flowchart-step-body">
+            <div class="flowchart-step-sidebar">
+                Step 1
+            </div>
+            <div class="flowchart-step-instructions">
+                <p>This is a description of what
+                is happening in this article</p>
+                <p>Here is some more.</p>
+            </div>
+        </div>
+        <div class="flowchart-step-footer">
+            <ul>
+                <li onclick="$('#def').slideToggle(200);">Option A</li>
+                <li onclick="$('#def').slideToggle(200);">Option B</li>
+                <li onclick="$('#def').slideToggle(200);">Option C</li>
+                <li>+</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="def" class="flowchart-step">
+        <div class="flowchart-step-body">
+            <div class="flowchart-step-sidebar">
+                Step 2
+            </div>
+            <div class="flowchart-step-instructions">
+                <p>Some other stuff here</p>
+            </div>
+        </div>
+        <div class="flowchart-step-footer">
+            <ul>
+                <li>Red</li>
+                <li>Blue</li>
+                <li onclick="$('#ghi').slideToggle(200);">+</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ghi" class="flowchart-step">
+        <div class="flowchart-step-body">
+            <div class="flowchart-step-sidebar">
+                Step 3
+            </div>
+            <div class="flowchart-step-instructions">
+                <form action="#">
+                    <textarea style=""></textarea>
+                </form>
+            </div>
+        </div>
+        <div class="flowchart-step-footer">
+            <ul>
+                <li>Option A</li>
+                <li>Option B</li>
+                <li>Option C</li>
+                <li>+</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
