@@ -19,6 +19,8 @@ namespace Heap.Web.Models.DataModel
         {
         }
 
+        public IDbSet<Article> Articles { get; set; }
+
         public IDbSet<Flowchart> Flowcharts { get; set; }
 
         public IDbSet<FlowchartStep> FlowchartSteps { get; set; }
