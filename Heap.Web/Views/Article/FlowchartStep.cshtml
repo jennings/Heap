@@ -1,0 +1,21 @@
+﻿@model Heap.Web.Models.FlowchartStep
+<div id="@Model.Id" class="flowchart-step">
+    <div class="flowchart-step-body">
+        <div class="flowchart-step-sidebar">
+            Step 1
+        </div>
+        <div class="flowchart-step-instructions">
+            <h2>@Model.Title</h2>
+            <p>@Model.Instructions</p>
+        </div>
+    </div>
+    <div class="flowchart-step-footer">
+        <ul>
+            @foreach (var path in Model.Flowchart.Paths.Where(p => p.Source == Model))
+            { 
+                <li id="@path.Id" onclick="$('#def').slideToggle(200);">@path.Title</li>
+            }
+            <li>+</li>
+        </ul>
+    </div>
+</div>

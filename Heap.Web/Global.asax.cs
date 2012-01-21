@@ -12,12 +12,15 @@ namespace Heap.Web
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using Castle.Windsor;
 
     //// Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     //// visit http://go.microsoft.com/?LinkId=9394801
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        internal static WindsorContainer Container { get; private set; }
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -37,8 +40,21 @@ namespace Heap.Web
         {
             AreaRegistration.RegisterAllAreas();
 
+            this.ConfigureDependencyInjection();
+
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            ControllerBuilder.Current.SetControllerFactory(typeof(WindsorControllerFactory));
+        }
+
+        private void ConfigureDependencyInjection()
+        {
+            MvcApplication.Container = new WindsorContainer();
+            MvcApplication.Container.Install(Castle.Windsor.Installer.FromAssembly.This());
+
+            var factory = MvcApplication.Container.Resolve<System.Data.Entity.Infrastructure.IDbConnectionFactory>();
+            // System.Data.Entity.Database.DefaultConnectionFactory = new MvcMiniProfiler.Data.ProfiledDbConnectionFactory(factory);
         }
     }
 }

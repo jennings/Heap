@@ -1,0 +1,10 @@
+﻿@model Heap.Web.ViewModels.Article.DetailsArticleViewModel
+@{
+    ViewBag.Title = Model.Article.Title;
+}
+<h2>
+    @Model.Article.Title</h2>
+<p>@Model.Article.Description</p>
+@{
+    // Html.RenderPartial("FlowchartStep", Model.Article.Flowchart.InitialStep);
+}

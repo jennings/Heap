@@ -1,75 +1,64 @@
-body
+*
 {
-    font-size: .85em;
-    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-header,
-footer,
-nav,
-section {
-    display: block;
-}
-
-/* Styles for basic forms
------------------------------------------------------------*/
-
-fieldset 
+p
 {
-    border:1px solid #ddd;
-    padding:0 1.4em 1.4em 1.4em;
-    margin:0 0 1.5em 0;
+    margin-bottom: 1em;
 }
 
-legend 
+.flowchart-step
 {
-    font-size:1.2em;
-    font-weight: bold;
+    border: solid 1px #000;
+    margin: 1em;
 }
 
-textarea 
+.flowchart-step-body
 {
-    min-height: 75px;
+    border: solid 1px #f00;
 }
 
-.editor-label 
+.flowchart-step-sidebar
 {
-    margin: 1em 0 0 0;
+    border: solid 1px #0f0;
+    float: left;
+    width: 120px;
+    height: 120px;
+    text-align: center;
 }
 
-.editor-field 
+.flowchart-step-instructions
 {
-    margin:0.5em 0 0 0;
+    margin: 0 1em 0 130px;
+    min-height: 120px;
 }
 
-
-/* Styles for validation helpers
------------------------------------------------------------*/
-.field-validation-error
+.flowchart-step-footer
 {
-    color: #ff0000;
+    border: solid 1px #00f;
 }
 
-.field-validation-valid
+.flowchart-step-footer ul
+{
+    list-style: none;
+    padding: 0 0.5em;
+}
+
+.flowchart-step-footer ul li
+{
+    display: inline-block;
+    border: solid 1px #f0f;
+    padding: 0.2em;
+}
+
+#def
 {
     display: none;
 }
 
-.input-validation-error
-{
-    border: 1px solid #ff0000;
-    background-color: #ffeeee;
-}
-
-.validation-summary-errors
-{
-    font-weight: bold;
-    color: #ff0000;
-}
-
-.validation-summary-valid
+#ghi
 {
     display: none;
 }

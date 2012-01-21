@@ -12,7 +12,7 @@ namespace Heap.Web.Models.DataModel
     using System.Linq;
     using System.Web;
 
-    public class HeapContext : DbContext
+    public class HeapContext : DbContext, IHeapContext
     {
         public HeapContext(string nameOrConnectionString)
             : base(nameOrConnectionString)

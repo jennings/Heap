@@ -25,5 +25,7 @@ namespace Heap.Web.Models
         public ICollection<FlowchartPath> Paths { get; set; }
 
         public ICollection<FlowchartStep> Steps { get; set; }
+
+        public virtual FlowchartStep InitialStep { get; set; }
     }
 }
